@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": false,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "paths": {
+      "#helpers": ["./api/src/helpers"],
+      "#helpers/*": ["./api/src/helpers/*.helper"],
+      "#config": ["./api/src/config"],
+      "#config/*": ["./api/src/config/*.config"],
+      "#exceptions": ["./api/src/exceptions"],
+      "#exceptions/*": ["./api/src/exceptions/*.exception"]
+    }
+  }
+}

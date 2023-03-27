@@ -1,0 +1,17 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "../",
+  "testEnvironment": "node",
+  "testRegex": "OpNotice.controller.e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "#helpers\/(.*)": ["<rootDir>/api/src/helpers/$1.helper"],
+    "#helpers": ["<rootDir>/api/src/helpers"],
+    "#config\/(.*)": ["<rootDir>/api/src/config/$1.config"],
+    "#config": ["<rootDir>/api/src/config"],
+    "#exceptions\/(.*)": ["<rootDir>/api/src/exceptions/$1.exception"],
+    "#exceptions": ["<rootDir>/api/src/exceptions"]
+  } 
+}
