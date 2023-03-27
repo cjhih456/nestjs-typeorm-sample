@@ -4,6 +4,7 @@ import { Body, Delete, Get, Param, Post, Put, Query } from '@nestjs/common'
 import _ from 'lodash'
 import {
   BeforeInsert,
+  BeforeUpdate,
   Between,
   Column,
   FindOneOptions,
@@ -40,11 +41,26 @@ export class Base {
     nullable: true,
   })
   setDate: string
+  @Column('int', { name: 'deleted_at', default: () => "'0'" })
+  public deletedAt: number
+  @Column('varchar', {
+    name: 'del_date',
+    length: 45,
+    nullable: true,
+  })
+  delDate: string
   @BeforeInsert()
   baseInitDate() {
     this.createdAt = DateHelpers.getCurrentUCTimestamp()
     this.setDate = DateHelpers.getCurrentUTCDateTime()
     this.useFlag = 1
+  }
+  @BeforeUpdate()
+  useFlagCheck() {
+    if (this.useFlag === this.deletedValue) {
+      this.delDate = DateHelpers.getCurrentUTCDateTime()
+      this.deletedAt = DateHelpers.getCurrentUCTimestamp()
+    }
   }
 }
 

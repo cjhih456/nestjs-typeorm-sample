@@ -29,7 +29,6 @@ describe('OpNotice (e2e)', () => {
           imports: [ConfigModule],
           inject: [ConfigService],
           useFactory: (config: ConfigService) => {
-            console.log
             return {
               autoLoadEntities: true,
               host: config.get('MAINDB_HOST'),
@@ -60,7 +59,6 @@ describe('OpNotice (e2e)', () => {
   })
   describe('공지사항 활동', () => {
     it('/notice/list (GET)', async () => {
-      console.log(opNoticeController)
       const result = await opNoticeController.findWithPaging({
         pageSize: 10,
         pageNumber: 1,

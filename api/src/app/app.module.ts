@@ -4,6 +4,7 @@ import { AppController } from './app.controller'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { validate } from '#helpers/ConfigValidator'
 import { OpNoticeModule } from './OpNotice/OpNotice.module'
+import { OpEmailTemplateModule } from './OpEmailTemplate/OpEmailTemplate.module'
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -29,6 +30,7 @@ import { OpNoticeModule } from './OpNotice/OpNotice.module'
       },
     }),
     OpNoticeModule,
+    OpEmailTemplateModule,
   ],
   controllers: [AppController],
   providers: [],
